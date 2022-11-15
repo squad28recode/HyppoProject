@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Advinhe o Número</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			width: 100vw;
+			height: 100vh;
+			overflow-x: hidden;
+			background: rgb(96, 194, 232);
+		}
+
+		main {
+			width: 100%;
+			height: 100%;
+			padding: 1rem;
+		}
+
+		section {
+			width: 100%;
+			margin: 0 auto;
+			padding: 1rem;
+			margin-bottom: 0.625rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 1.75rem;
+		}
+
+		#titulo,
+		#dica {
+			background-color: #333;
+			color: white;
+			padding: 2px;
+			width: 75%;
+			margin: 0 auto;
+		}
+
+		.centro {
+			margin-top: 0.625rem;
+			text-align: center;
+		}
+
+		.input {
+			font-size: 1.5rem;
+			text-align: center;
+			padding: 5px;
+			margin-bottom: 0.625rem;
+			border: 1px solid #444;
+			border-radius: 6px;
+			outline: none;
+		}
+
+		#btnChutar {
+			font-size: 1.5rem;
+		}
+
+		#numeroSecreto {
+			background: brown;
+			color: white;
+			padding: 5px 10px;
+			border-radius: 50%;
+			margin-bottom: 0.5rem;
+		}
+
+		#aviso {
+			padding: 5px;
+			color: white;
+			width: 20%;
+			margin: 0 auto;
+		}
+
+		.acertou {
+			background: green;
+		}
+
+		.errou {
+			background: red;
+		}
+
+		@keyframes piscar {
+			0% {
+				box-shadow: 0 0 25px #d50000;
+			}
+
+			100% {}
+		}
+
+		@keyframes aparecer {
+			to {
+				opacity: 0;
+				/* opacidade 0 = 100% transparente */
+			}
+
+			from {
+				opacity: 1;
+				/* opacidade 1 = 0% transparente */
+			}
+		}
+
+		.animar {
+			animation: piscar 1s infinite alternate;
+		}
+
+		.aparecer {
+			animation: aparecer 1.5s ease-in;
+		}
+	</style>
+</head>
+
+<body onload='gerarNumeroSecreto()'>
+	<!-- Esse jogo não foi 100% ideia minha. Foi adaptado do vídeo: https://www.youtube.com/watch?v=OnMl4DslIUg&ab_channel=ProfessorEdsonMaia Foi feito com fins de aprendizado -->
+	<main id="screen">
+		<div id="titulo">
+			<h1>Advinhar Número Secreto</h1>
+		</div>
+		<p id="dica" class="centro">Digite um número entre 1 e 10</p>
+		<section class="content">
+			<input type="number" step="1" min="1" max="10" name="inputNumero" id="inputNumero" class="input animar"
+				onclick="ativarBtnChutar()" />
+			<button id="buttonchute" class="botao" onclick="jogar()">Chutar</button>
+		</section>
+		<p class="centro" id="aviso"></p>
+	</main>
+
+	<script>
+		let numeroSecreto = 0
+		let contador = 1
+		let min = 1
+		let max = 10
+		let situacao = ''
+
+		// pegando os elementos
+		let inputNumero = document.querySelector('#inputNumero')
+		let btnChutar = document.querySelector('#buttonchute')
+		let aviso = document.querySelector('#aviso')
+
+		function gerarNumeroSecreto() {
+			numeroSecreto = Math.floor(Math.random() * (max - min + 1)) + min
+		}
+
+		function bloquearBtnChutar() {
+			btnChutar.setAttribute('disabled', 'disabled')
+			btnChutar.style.background = '#fff'
+		}
+
+		function ativarBtnChutar() {
+			btnChutar.removeAttribute('disabled')
+			btnChutar.style.background = '#fff'
+		}
+
+		function validarNumeroDigitado(numero) {
+			if (numero <= 0 || numero > 10) {
+				console.log('Tentativa errada!')
+				aviso.classList.add('errou')
+				mensagemRapida('Você está dando mole ein! Digite um número de 1 a 10')
+				bloquearBtnChutar()
+				inputNumero.value = ''
+			} else {
+				console.log('Número válido')
+			}
+		}
+
+		function jogar() {
+			console.log("Jogando")
+			verificarSeAcertou()
+		}
+
+		function mensagemRapida(mensagem) {
+			aviso.textContent = mensagem
+			setTimeout(function () {
+				aviso.textContent = ""
+				aviso.classList.remove('acertou')
+				aviso.classList.remove('errou')
+				inputNumero.value = ''
+			}, 3000)
+		}
+
+		function gameOver(situacao) {
+			switch (situacao) {
+
+				case 'Acertou':
+					aviso.classList.add('acertou')
+					mensagemRapida('Acertou, o número secreto era ' + numeroSecreto)
+					break
+
+				case 'Chute maior':
+					mensagemRapida('Frio, passou demais')
+					aviso.classList.add('errou')
+					break
+
+				case 'Chute menor':
+					aviso.classList.add('errou')
+					mensagemRapida('Frio, ainda não está perto')
+					break
+
+				default:
+					console.log('Informe a situação')
+
+			} // fim do switch case
+		}
+
+		function verificarSeAcertou() {
+			// pegar o valor do input numero digitado e converter para inteiro
+			chute = parseInt(document.querySelector('#inputNumero').value)
+
+			console.log('Nº do Chute ' + contador)
+			console.log('Chute ' + chute)
+
+			if (numeroSecreto === chute) {
+				console.log('Acertou')
+				situacao = 'Acertou'
+				gameOver(situacao)
+				gerarNumeroSecreto() // gerar novo numero secreto
+			} else if (chute > numeroSecreto) {
+				console.log('Chute maior')
+				situacao = 'Chute maior'
+				gameOver(situacao)
+			} else if (chute < numeroSecreto) {
+				console.log('Chute menor')
+				situacao = 'Chute menor'
+				gameOver(situacao)
+			} else {
+				console.log('Impossível verificar se acertou!')
+			}
+
+		}
+
+	</script>
+</body>
+
+</html>

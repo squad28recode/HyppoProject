@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Extracurricular</title>
+  <!-- Link Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <!-- Link Favicon -->
+  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+  <!-- CSS interno -->
+  <style>
+    body {
+      background: rgb(96, 194, 232);
+      background: linear-gradient(90deg, rgba(96, 194, 232, 1) 0%, rgba(71, 198, 218, 1) 22%, rgba(29, 151, 176, 1) 45%, rgba(0, 95, 124, 1) 99%);
+    }
+
+    .card-footer>a {
+      text-decoration: none;
+      color: blue;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        overflow-x: hidden;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NavBar -->
+  <header class="col-12">
+    <nav class="navbar navbar-expand-lg bg-dark">
+      <div class="container-fluid col-6">
+        <a class="navbar-brand" th:href="@{/}" style="color: white;">Hyppo Project</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" th:href="@{/}" style="color: white;">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/extracurricular}" style="color: white;">Extracurricular</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/academico}" style="color: white;">Acadêmico</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " th:href="@{/contatos}" style="color: white;">Contato</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " th:href="@{/mural}" style="color: white;">Mural</a>
+            </li>
+          </ul>
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false" style="color: white;">
+                  Games
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="#" style="color: white;">Mendel Game</a></li>
+                  <li><a class="dropdown-item" href="#" style="color: white;">Hyppo Memory</a></li>
+                  <li><a class="dropdown-item" href="#" style="color: white;">Legend of Hyppo</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Fim NavBar -->
+  <!-- Início da Main/Seleção do tipo de atividades -->
+  <main>
+    <div class="accordion col-12" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+            aria-controls="panelsStayOpen-collapseOne">
+            Atividades Extracurriculares
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+          aria-labelledby="panelsStayOpen-headingOne">
+          <div class="accordion-body"
+            style="background: rgb(96, 194, 232); background: linear-gradient(90deg, rgba(96, 194, 232, 1) 0%, rgba(71, 198, 218, 1) 22%, rgba(29, 151, 176, 1) 45%, rgba(0, 95, 124, 1) 99%);">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <!-- cards de 01 a 03 -->
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/artes.jpg}" class="card-img-top" alt="Artes">
+                  <div class="card-body">
+                    <h5 class="card-title">Artes</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem accusamus
+                      ipsum provident fugit modi, numquam obcaecati. Est obcaecati rem soluta ea fugit omnis! Deserunt
+                      nemo laboriosam voluptate iure nisi soluta!</p>
+                  </div>
+                  <div class="card-footer m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/musica.jpg}" class="card-img-top" alt="Música">
+                  <div class="card-body">
+                    <h5 class="card-title">Música</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias fugit, fuga
+                      nisi pariatur recusandae totam reprehenderit non laudantium possimus et earum nostrum voluptatum?
+                      Voluptates magni numquam est neque sit blanditiis.</p>
+                  </div>
+                  <div class="card-footer m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/teatro.jpg}" class="card-img-top" alt="Teatro">
+                  <div class="card-body">
+                    <h5 class="card-title">Teatro</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi dolorem
+                      eveniet, unde molestias totam qui odit ea velit minima vel quia atque nemo reprehenderit quas
+                      voluptatem. Quisquam accusamus facilis excepturi?</p>
+                  </div>
+                  <div class="card-footer m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <!-- fim 01, 02 e 03 -->
+              <!-- cards de 04 a 06 -->
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/astronomia.jpg}" class="card-img-top" alt="Astronomia">
+                  <div class="card-body">
+                    <h5 class="card-title">Astronomia</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis at odio autem
+                      unde debitis impedit. Eos provident debitis deleniti est adipisci dolorem corporis maxime, numquam
+                      recusandae itaque doloremque hic consectetur.</p>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/fisica.jpg}" class="card-img-top" alt="Física">
+                  <div class="card-body">
+                    <h5 class="card-title">Física</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quaerat quo
+                      neque quod iusto consequatur debitis saepe in soluta totam nesciunt quasi eveniet veritatis illum
+                      perferendis laboriosam atque, accusantium maxime.</p>
+                  </div>
+                  <div class="card-footer  m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/math.jpg}" class="card-img-top" alt="Matemática">
+                  <div class="card-body">
+                    <h5 class="card-title">Matemática</h5>
+                    <p class="card-text">- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi dolor beatae
+                      facere, nostrum ad veritatis nulla. Soluta, et laborum ut doloremque aut expedita, iusto commodi
+                      sed dolor culpa, facilis iste!</p>
+                  </div>
+                  <div class="card-footer ">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <!-- fim 04, 05 e 06 -->
+              <!-- cards de 07 a 09 -->
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/historia.jpg}" class="card-img-top" alt="História">
+                  <div class="card-body">
+                    <h5 class="card-title">Historia</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium
+                      obcaecati nesciunt voluptatum tempore possimus rem at vitae, porro reiciendis deleniti? Earum
+                      illum blanditiis veritatis illo voluptate asperiores odio numquam dolorem?</p>
+                  </div>
+                  <div class="card-footer m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/futebol.jpg}" class="card-img-top" alt="Futebol">
+                  <div class="card-body">
+                    <h5 class="card-title">Futebol</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus asperiores
+                      quas nemo, consequatur, debitis illo rerum nesciunt repellendus quo est necessitatibus dolore
+                      commodi, rem expedita. Dolorem ab iste quidem voluptatum.</p>
+                  </div>
+                  <div class="card-footer m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/basquete.jpg}" class="card-img-top" alt="Basquete">
+                  <div class="card-body">
+                    <h5 class="card-title">Basquete</h5>
+                    <p class="card-text">- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum repudiandae
+                      at dolor eos dolores minima deserunt repellat? Eveniet vel tempore, quasi fugiat omnis, facilis
+                      nisi illo nulla deleniti iusto dicta?</p>
+                  </div>
+                  <div class="card-footer m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <!-- 07, 08 e 09 -->
+              <!-- cards de 10 a 12 -->
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/volei.jpg}" class="card-img-top" alt="Vôlei">
+                  <div class="card-body">
+                    <h5 class="card-title">Vôlei</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Id excepturi,
+                      distinctio architecto quidem maiores neque accusamus rerum quas tenetur! Quasi ipsum modi
+                      incidunt! Tempore dolores officia accusantium perspiciatis? Voluptate, omnis!</p>
+                  </div>
+                  <div class="card-footer m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/ingles.jpg}" class="card-img-top" alt="Inglês">
+                  <div class="card-body">
+                    <h5 class="card-title">Inglês</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse corrupti
+                      reiciendis cupiditate, eius assumenda nemo nihil aspernatur facere pariatur aperiam perferendis
+                      mollitia distinctio vero odit natus sed cumque tenetur earum.</p>
+                  </div>
+                  <div class="card-footer m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/espanhol.jpg}" class="card-img-top" alt="Espanhol">
+                  <div class="card-body">
+                    <h5 class="card-title">Espanhol</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, velit.
+                      Asperiores optio repellendus obcaecati saepe veniam neque molestias reprehenderit modi, eum
+                      ratione magni ut maxime, assumenda magnam animi? Voluptatem, optio!</p>
+                  </div>
+                  <div class="card-footer m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <!-- fim 10, 11 e 12 -->
+              <!-- cards de 13 a 15 -->
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/alemao.jpg}" class="card-img-top" alt="Alemão">
+                  <div class="card-body">
+                    <h5 class="card-title">Alemão</h5>
+                    <p class="card-text">- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse error, fugit
+                      minima nihil et dolore hic repellendus, consequuntur ex, omnis fuga earum dicta libero repellat
+                      aliquam nobis beatae vero autem?</p>
+                  </div>
+                  <div class="card-footer  m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/frances.jpg}" class="card-img-top" alt="Francês">
+                  <div class="card-body">
+                    <h5 class="card-title">Francês</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias possimus
+                      aspernatur magnam, omnis at laudantium nihil ex consectetur aperiam, asperiores dicta, molestiae
+                      assumenda doloremque modi voluptatum et illum veniam tempora!</p>
+                  </div>
+                  <div class="card-footer m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-5">
+                <div class="card">
+                  <img th:src="@{../img/japones.jpg}" class="card-img-top" alt="Japonês">
+                  <div class="card-body">
+                    <h5 class="card-title">Japonês</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vero molestiae
+                      consequatur vel laudantium architecto cum? Eveniet, eum corrupti illo quas, unde, culpa autem id
+                      ut pariatur nam consectetur deserunt!</p>
+                  </div>
+                  <div class="card-footer  m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- fim 13, 14 e 15 -->
+      <!-- Segundo Accordion - Monitorias-->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseTwo">
+            Monitorias
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+          aria-labelledby="panelsStayOpen-headingTwo">
+          <div class="accordion-body"
+            style="background: rgb(96, 194, 232); background: linear-gradient(90deg, rgba(96, 194, 232, 1) 0%, rgba(71, 198, 218, 1) 22%, rgba(29, 151, 176, 1) 45%, rgba(0, 95, 124, 1) 99%);">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <!-- Início dos Cards da Monitoria -->
+              <!-- Cards de 01 a 03 -->
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/artes.jpg}" class="card-img-top" alt="artes">
+                  <div class="card-body">
+                    <h5 class="card-title">Artes</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi dolorem
+                      eveniet, unde molestias totam qui odit ea velit minima vel quia atque nemo reprehenderit quas
+                      voluptatem. Quisquam accusamus facilis excepturi?</p>
+                  </div>
+                  <div class="card-footer m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/historia.jpg}" class="card-img-top" alt="historia">
+                  <div class="card-body">
+                    <h5 class="card-title">História</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi dolorem
+                      eveniet, unde molestias totam qui odit ea velit minima vel quia atque nemo reprehenderit quas
+                      voluptatem. Quisquam accusamus facilis excepturi?</p>
+                  </div>
+                  <div class="card-footer m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/fisica.jpg}" class="card-img-top" alt="fisica">
+                  <div class="card-body">
+                    <h5 class="card-title">Física</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi dolorem
+                      eveniet, unde molestias totam qui odit ea velit minima vel quia atque nemo reprehenderit quas
+                      voluptatem. Quisquam accusamus facilis excepturi?</p>
+                  </div>
+                  <div class="card-footer m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Fim 01, 02 e 03 -->
+              <!-- Cards de 04 a 06 -->
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/math.jpg}" class="card-img-top" alt="matemática">
+                  <div class="card-body">
+                    <h5 class="card-title">Matemática</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi dolorem
+                      eveniet, unde molestias totam qui odit ea velit minima vel quia atque nemo reprehenderit quas
+                      voluptatem. Quisquam accusamus facilis excepturi?</p>
+                  </div>
+                  <div class="card-footer m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/biologia.jpg}" class="card-img-top" alt="biologia">
+                  <div class="card-body">
+                    <h5 class="card-title">Biologia</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi dolorem
+                      eveniet, unde molestias totam qui odit ea velit minima vel quia atque nemo reprehenderit quas
+                      voluptatem. Quisquam accusamus facilis excepturi?</p>
+                  </div>
+                  <div class="card-footer m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/quimica.jpg}" class="card-img-top" alt="quimica">
+                  <div class="card-body">
+                    <h5 class="card-title">Química</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi dolorem
+                      eveniet, unde molestias totam qui odit ea velit minima vel quia atque nemo reprehenderit quas
+                      voluptatem. Quisquam accusamus facilis excepturi?</p>
+                  </div>
+                  <div class="card-footer m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Fim 04, 05 e 06 -->
+              <!-- Cards de 07 a 09 -->
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/portugues.jpg}" class="card-img-top" alt="portugues">
+                  <div class="card-body">
+                    <h5 class="card-title">Português</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi dolorem
+                      eveniet, unde molestias totam qui odit ea velit minima vel quia atque nemo reprehenderit quas
+                      voluptatem. Quisquam accusamus facilis excepturi?</p>
+                  </div>
+                  <div class="card-footer m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/geografia.jpg}" class="card-img-top" alt="geografia">
+                  <div class="card-body">
+                    <h5 class="card-title">Geografia</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi dolorem
+                      eveniet, unde molestias totam qui odit ea velit minima vel quia atque nemo reprehenderit quas
+                      voluptatem. Quisquam accusamus facilis excepturi?</p>
+                  </div>
+                  <div class="card-footer m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img th:src="@{../img/redação.jpg}" class="card-img-top" alt="redação">
+                  <div class="card-body">
+                    <h5 class="card-title">Redação</h5>
+                    <p class="card-text">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi dolorem
+                      eveniet, unde molestias totam qui odit ea velit minima vel quia atque nemo reprehenderit quas
+                      voluptatem. Quisquam accusamus facilis excepturi?</p>
+                  </div>
+                  <div class="card-footer m-auto">
+                    <a href="#">Saiba mais</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Fim 07, 08 e 09 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- imagens de apoio -->
+    <div class="conteudo">
+      <img th:src="@{../img/combataaviolencia.png}" alt="#Diganaoaviolencia">
+      <img th:src="@{../img/vempraescolaimg.png}" alt="#Diganaoaviolencia">
+      <img th:src="@{../img/somostodosiguais.png}" alt="#Diganaoaviolencia">
+    </div>
+  </main>
+
+ <!-- Footer -->
+ <footer class="p-3" style="background-color: #212529;">
+    <div class="b-example-divider"></div>
+    <div class="container">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a th:href="@{/}" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a th:href="@{/contatos}" class="nav-link px-2 text-muted">Contatos</a></li>
+            <li class="nav-item"><a th:href="@{/extracurricular}" class="nav-link px-2 text-muted">Extracurricular</a>
+            </li>
+            <li class="nav-item"><a th:href="@{/mural}" class="nav-link px-2 text-muted">Mural</a></li>
+            <li class="nav-item"><a th:href="@{/academico}" class="nav-link px-2 text-muted">Acadêmico</a></li>
+        </ul>
+        <p class="text-center text-muted">&copy; 2022 Company, Inc</p>
+    </div>
+</footer>
+<!-- Fim Footer -->
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

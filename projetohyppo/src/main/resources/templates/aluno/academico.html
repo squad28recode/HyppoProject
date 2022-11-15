@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Acadêmico</title>
+    <!-- Link Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- Link Favicon -->
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <!-- CSS interno -->
+    <style>
+        body {
+            overflow-x: hidden;
+            background: rgb(96, 194, 232);
+            background: linear-gradient(90deg, rgba(96, 194, 232, 1) 0%, rgba(71, 198, 218, 1) 22%, rgba(29, 151, 176, 1) 45%, rgba(0, 95, 124, 1) 99%);
+        }
+
+        .texto {
+            width: 100vw;
+            height: 20vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .texto>h1 {
+            font-size: 35px;
+            color: white;
+        }
+
+        .cards-itens {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .cartao:hover {
+            transform: scale(0.82);
+        }
+
+        .mobile {
+            display: none;
+        }
+
+        @media (max-width:1588px) {
+            .mobile {
+                width: 100%;
+                height: 60vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .cards-itens {
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NavBar -->
+    <header class="col-12">
+        <nav class="navbar navbar-expand-lg bg-dark">
+            <div class="container-fluid col-6">
+                <a class="navbar-brand" th:href="@{/}" style="color: white;">Hyppo Project</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" th:href="@{/}" style="color: white;">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/extracurricular}" style="color: white;">Extracurricular</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/academico}" style="color: white;">Acadêmico</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " th:href="@{/contatos}" style="color: white;">Contato</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " th:href="@{/mural}" style="color: white;">Mural</a>
+                        </li>
+                    </ul>
+                    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false" style="color: white;">
+                                    Games
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#" style="color: white;">Mendel Game</a></li>
+                                    <li><a class="dropdown-item" href="#" style="color: white;">Hyppo Memory</a></li>
+                                    <li><a class="dropdown-item" href="#" style="color: white;">Legend of Hyppo</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Fim NavBar -->
+    <main style="display: flex; flex-direction: column;">
+        <div class="texto"
+            style="width: 100vw; height: 20vh; display: flex; flex-direction: column; text-align: center;">
+            <h1>Área do aluno</h1>
+        </div>
+        <div class="cards-itens">
+            <a href="" style="text-decoration: none; color: black; transition: 400ms;" class="cartao">
+                <div class="card" style="width: 36rem;">
+                    <img th:src="@{../img/boletim.jpg}" class="card-img-top" alt="Boletim">
+                    <div class="card-body">
+                        <h3>Boletim</h3>
+                        <p class="card-text">Veja suas notas e acompanhe seu desempenho em tempo real</p>
+                    </div>
+                </div>
+            </a>
+            <a href="" style="text-decoration: none; color: black; transition: 400ms;" class="cartao">
+                <div class="card" style="width: 36rem;">
+                    <img th:src="@{../img/gradecurricular.jpg}" class="card-img-top" alt="Grade Curricular">
+                    <div class="card-body">
+                        <h3>Grade Curricular</h3>
+                        <p class="card-text">Veja seus horários e fique por dentro da sua rotina escolar</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- responsividade para telas menores -->
+        <div class="mobile">
+            <button type="button" class="btn btn-dark">Boletim</button>
+            <button type="button" class="btn btn-dark">Grade Curricular</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="p-3" style="background-color: #212529;">
+        <div class="b-example-divider"></div>
+        <div class="container">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a th:href="@{/}" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a th:href="@{/contatos}" class="nav-link px-2 text-muted">Contatos</a></li>
+                <li class="nav-item"><a th:href="@{/extracurricular}" class="nav-link px-2 text-muted">Extracurricular</a>
+                </li>
+                <li class="nav-item"><a th:href="@{/mural}" class="nav-link px-2 text-muted">Mural</a></li>
+                <li class="nav-item"><a th:href="@{/academico}" class="nav-link px-2 text-muted">Acadêmico</a></li>
+            </ul>
+            <p class="text-center text-muted">&copy; 2022 Company, Inc</p>
+        </div>
+    </footer>
+    <!-- Fim Footer -->
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

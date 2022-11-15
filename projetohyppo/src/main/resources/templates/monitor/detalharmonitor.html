@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhar Monitor</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+            background: rgb(96, 194, 232);
+            background: linear-gradient(90deg, rgba(96, 194, 232, 1) 0%, rgba(71, 198, 218, 1) 22%, rgba(29, 151, 176, 1) 45%, rgba(0, 95, 124, 1) 99%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .titulo{
+            font-size: 60px;
+            color: white;
+        }
+
+        .subtitulo{
+            font-size: 40px;
+            color: white;
+        }
+
+        .detalhar{
+            width: 80%;
+            border: 1px solid white;
+            min-height: 200px;
+        }
+
+        .indices > td{
+            border: 1px solid white;
+            text-align: center;
+            font-size: 20px;
+            color: white;
+        }
+
+        .data > td{
+            border: 1px solid white;
+            text-align: center;
+            font-size: 20px;
+            color: black;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1 class="titulo">Monitores</h1>
+    <h3 class="subtitulo">Detalhes dos Monitores</h3>
+    <table class="detalhar">
+        <tr class="indices">
+            <td>ID</td>
+            <td>Nome</td>
+            <td>Sobrenome</td>
+            <td>Idade</td>
+            <td>Email</td>
+            <td>Senha</td>
+        </tr>
+        <tr class="data">
+            <td th:text="${monitor.id}">0</td>
+            <td th:text="${monitor.nome}">João</td>
+            <td th:text="${monitor.sobrenome}">Santos</td>
+            <td th:text="${monitor.idade}">19</td>
+            <td th:text="${monitor.email}">joao123456789@hotmail.com</td>
+            <td th:text="${monitor.senha}">123456789</td>
+        </tr>
+    </table>
+    
+    <a th:href="@{/diretorhome}"></a>
+</body>
+</html>

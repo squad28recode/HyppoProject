@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contatos</title>
+    <!-- Link Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- Link Favicon -->
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <!-- CSS no próprio documento -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #222;
+        }
+
+        main {
+            background: rgb(96, 194, 232);
+            background: linear-gradient(90deg, rgba(96, 194, 232, 1) 0%, rgba(71, 198, 218, 1) 22%, rgba(29, 151, 176, 1) 45%, rgba(0, 95, 124, 1) 99%);
+        }
+
+        .professor,
+        .coordenador,
+        .psicologo,
+        .diretor {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 10px 7px black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NavBar -->
+    <header class="col-12 position-fixed">
+        <nav id="navbar-example2" class="navbar px-3 col-11 m-auto">
+            <a class="navbar-brand" th:href="@{/}" style="color: white;">Hyppo Project</a>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading1" th:href="@{#scrollspyHeading1}" style="color: white;">Professor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading2" th:href="@{#scrollspyHeading2}" style="color: white;">Coordenador</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading3" th:href="@{#scrollspyHeading3}" style="color: white;">Psicólogo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading4" th:href="@{#scrollspyHeading4}" style="color: white;">Diretor</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Fim NavBar -->
+    <!-- Main/Área de Contatos -->
+    <main class="col-12 d-grid gap-5 pt-5">
+        <!-- Professor(es) -->
+        <div class="professor col-8 m-auto mt-3" id="scrollspyHeading1">
+            <form>
+                <div class="row apr my-3">
+                    <div class="col">
+                        <h3 class="text-center"> Professores</h3>
+                    </div>
+                </div>
+                <div class="form-group m-3">
+                    <label for="InputEmail1">Endereço de email</label>
+                    <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp"
+                        placeholder="Digite o seu e-mail" required>
+                    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email com
+                        ninguém.</small>
+                </div>
+                <div class="form-group m-3">
+                    <label for="validationDefault06" class="form-label">Digite o seu Registro Acadêmico</label>
+                    <input type="text" class="form-control" id="validationDefault06" placeholder="Digite o seu RA"
+                        maxlength="11" required>
+                </div>
+                <div class="form-group m-3 mt-5">
+                    <select class="form-select form-select-lg mb-3" id="exampleFormControlSelect1" required>
+                        <option>Selecione um professor.. </option>
+                        <option>Professor X de Português</option>
+                        <option>Professor X de Matemática </option>
+                        <option>Professor X de Física</option>
+                        <option>Professor X de Biologia</option>
+                        <option>Professor X de Geografia</option>
+                        <option>Professor X de Quimica</option>
+                        <option>Professor X de Educação Física</option>
+                        <option>Professor X de Historia</option>
+                        <option>Professor X de Artes</option>
+                        <option>Professor X de Filosofia</option>
+                        <option>Professor X de Sociologia</option>
+                    </select>
+                </div>
+                <div class="form-group m-3">
+                    <label for="exampleFormControlTextarea1">Escreva sua mensagem ao professor abaixo: </label>
+                    <textarea class="form-control mt-1" id="exampleFormControlTextarea1" rows="6"></textarea>
+                </div>
+                <div class="d-grid gap-2 m-3">
+                    <button type="submit" class="btn btn-dark">Enviar dados</button>
+                </div>
+            </form>
+        </div>
+        <!-- Coordenador(es) -->
+        <div class="coordenador col-8 m-auto" id="scrollspyHeading2">
+            <form>
+                <div class="row apr my-3">
+                    <div class="col">
+                        <h3 class="text-center"> Coordenadores</h3>
+                    </div>
+                </div>
+                <div class="form-group m-3">
+                    <label for="InputEmail1">Endereço de email</label>
+                    <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp"
+                        placeholder="Digite o seu e-mail" required>
+                    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email com
+                        ninguém.</small>
+                </div>
+                <div class="form-group m-3">
+                    <label for="validationDefault06" class="form-label">Digite o seu Registro Acadêmico</label>
+                    <input type="text" class="form-control" id="validationDefault06" placeholder="Digite o seu RA"
+                        maxlength="11" required>
+                </div>
+                <div class="form-group m-3 mt-5">
+                    <select class="form-select form-select-lg mb-3" id="exampleFormControlSelect1" required>
+                        <option>Fulano Ipsum</option>
+                        <option>Beltrano Lorem</option>
+                    </select>
+                </div>
+                <div class="form-group m-3">
+                    <label for="exampleFormControlTextarea1">Escreva sua mensagem ao professor abaixo: </label>
+                    <textarea class="form-control mt-1" id="exampleFormControlTextarea1" rows="6"></textarea>
+                </div>
+                <div class="d-grid gap-2 m-3">
+                    <button type="submit" class="btn btn-dark">Enviar dados</button>
+                </div>
+            </form>
+        </div>
+        <!-- Psicólogo(s) -->
+        <div class="psicologo col-8 m-auto" id="scrollspyHeading3">
+            <form>
+                <div class="row apr my-3">
+                    <div class="col">
+                        <h3 class="text-center"> Psicólogo(s)</h3>
+                    </div>
+                </div>
+                <div class="form-group m-3">
+                    <label for="InputEmail1">Endereço de email</label>
+                    <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp"
+                        placeholder="Digite o seu e-mail" required>
+                    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email com
+                        ninguém.</small>
+                </div>
+                <div class="form-group m-3">
+                    <label for="validationDefault06" class="form-label">Digite o seu Registro Acadêmico</label>
+                    <input type="text" class="form-control" id="validationDefault06" placeholder="Digite o seu RA"
+                        maxlength="11" required>
+                </div>
+                <div class="form-group m-3">
+                    <label for="exampleFormControlTextarea1">Escreva sua mensagem ao professor abaixo: </label>
+                    <textarea class="form-control mt-1" id="exampleFormControlTextarea1" rows="6"></textarea>
+                </div>
+                <div class="d-grid gap-2 m-3">
+                    <button type="submit" class="btn btn-dark">Enviar dados</button>
+                </div>
+            </form>
+        </div>
+        <!-- Diretor -->
+        <div class="diretor col-8 m-auto mb-3" id="scrollspyHeading4">
+            <form>
+                <div class="row apr my-3">
+                    <div class="col">
+                        <h3 class="text-center"> Diretor</h3>
+                    </div>
+                </div>
+                <div class="form-group m-3">
+                    <label for="InputEmail1">Endereço de email</label>
+                    <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp"
+                        placeholder="Digite o seu e-mail" required>
+                    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email com
+                        ninguém.</small>
+                </div>
+                <div class="form-group m-3">
+                    <label for="validationDefault06" class="form-label">Digite o seu Registro Acadêmico</label>
+                    <input type="text" class="form-control" id="validationDefault06" placeholder="Digite o seu RA"
+                        maxlength="11" required>
+                </div>
+                <div class="form-group m-3">
+                    <label for="exampleFormControlTextarea1">Escreva sua mensagem ao professor abaixo: </label>
+                    <textarea class="form-control mt-1" id="exampleFormControlTextarea1" rows="6"></textarea>
+                </div>
+                <div class="d-grid gap-2 m-3">
+                    <button type="submit" class="btn btn-dark">Enviar dados</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <!-- Fim Main -->
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
